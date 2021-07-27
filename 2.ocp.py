@@ -11,16 +11,32 @@ class Animal:
         pass
 
     def make_sound(self):
-        if self.name == 'lion':
-            print('roar')
-        elif self.name == 'mouse':
-            print('squeak')
-        else:
-            print('...')
+        pass
+    
+class Lion(Animal):
+    def __init__(self,name: str):
+        self.name = name
+        
+    def get_name(self):
+        return self.name
+    
+    def make_sound(self):
+        print('Roar')
+        
+    
+class Mouse(Animal):
+    def __init__(self,name: str):
+        self.name = name
+        
+    def get_name(self):
+        return self.name
+    
+    def make_sound(self):
+        print('Squeak')
 
 animals = [
-    Animal('lion'),
-    Animal('mouse')
+    Lion('lion'),
+    Mouse('mouse')
 ]
 
 def animal_sound(animals: list):
@@ -28,6 +44,7 @@ def animal_sound(animals: list):
         animal.make_sound()
 
 animal_sound(animals)
+
 
 
 """
@@ -44,8 +61,18 @@ class Discount:
         self.price = price
 
     def give_discount(self):
-            if self.customer == 'fav':
-                return self.price * 0.2
-            if self.customer == 'vip':
-                return self.price * 0.4
+            pass
 
+class DiscountFav(Discount):
+    def __init__(self, customer, price):
+        super().__init__(customer, price)
+        
+    def give_discount(self):
+        return self.price * 0.2
+    
+class DiscountVip(Discount):
+    def __init__(self, customer, price):
+        super().__init__(customer, price)
+        
+    def give_discount(self):
+        return self.price * 0.4
