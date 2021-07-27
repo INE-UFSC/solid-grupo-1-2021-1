@@ -41,4 +41,4 @@ class StatsReporter(AbstractStatsReporter):
 class StatsReporterWithColor(AbstractStatsReporter):
     def report(self):
         print(f'\033[31mName:{self.char.name()}\033[0;0m')
-        print(f'\033[32mHP:{self.char.hp()}\033[31m')
+        print(f'\033[32mHP:{self.char.hp()}\033[0;0m')
